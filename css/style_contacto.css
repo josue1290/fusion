@@ -1,0 +1,94 @@
+.titulocontacto
+{
+    position: absolute;
+    top: 14%;
+    left: 20%;
+    font-size: xxx-large;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contenedorcontacto
+{
+    position: absolute;
+    top: 27%;
+    left: 15%;
+    width: 70%;
+    height: 55%;
+    background: black;
+    border-radius: 50px;
+}
+.txtdireccion
+{
+	color: white;
+	position: absolute;
+	top: 35%;
+	left: 5%;
+}
+.txtdireccioncompleta
+{
+	color: white;
+	position: absolute;
+	top: 43%;
+	left: 5%;
+	font-size: x-large;
+}
+.formcontacto
+{
+	color: white;
+	position: absolute;
+	top: 30%;
+	left: 43%;
+}
+
+
+
+/*footer*/
+.footerc
+{
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: black;
+}
+.copyrightc
+{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+.redesc
+{
+    position: absolute;
+    top: 15%;
+    left: 82.5%;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+.twitterc
+{
+    position: absolute;
+    top: 50%;
+    left: 82.5%;
+    color: white;
+}
+.facebookc
+{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    color: white;
+}
+.instagramc
+{
+    position: absolute;
+    top: 50%;
+    left: 87.5%;
+    color: white;
+}

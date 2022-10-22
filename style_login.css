@@ -1,0 +1,32 @@
+body
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    color: white;
+}
+.caja1
+{
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    height: 60%;
+    background: black;
+    border-radius: 50px;
+	color: white;
+}
+.iniciosesion1
+{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    color: white;
+}
+.iconosh1
+{
+    position: absolute;
+    top: 15%;
+    left: 47%;
+    width: 3%;
+    height: 60%;
+}

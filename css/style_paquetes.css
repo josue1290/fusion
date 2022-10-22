@@ -1,0 +1,216 @@
+.bodypaquetes
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+}
+.paquetes
+{
+    position: absolute;
+    top: 12%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+}
+.titulopaquetes
+{
+    position: absolute;
+    top: 1%;
+    left: 20%;
+    font-size: xxx-large;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contenedorpaquetes
+{
+    position: absolute;
+    top: 7%;
+    left: 15%;
+    width: 70%;
+    height: 145%;
+    background: black;
+    border-radius: 50px;
+}
+.barraespacio
+{
+    background-color: white;
+    color: white;
+    position: absolute;
+    top: 24.5%;
+    left: 5%;
+    width: 90%;
+    height: 5px;
+}
+.barraespacio2
+{
+    background-color: white;
+    color: white;
+    position: absolute;
+    top: 51%;
+    left: 5%;
+    width: 90%;
+    height: 5px;
+}
+.barraespacio3
+{
+    background-color: white;
+    color: white;
+    position: absolute;
+    top: 79%;
+    left: 5%;
+    width: 90%;
+    height: 5px;
+}
+.paquetebasico
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 22.5%;
+}
+.titulopaquetebasico
+{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: xxx-large;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.incluyepb
+{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+}
+.paquetebasico ul
+{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+}
+.carousel
+{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 40%;
+    height: 80%
+}
+.carousel img
+{
+    border-radius: 50px;
+}
+.paquete2
+{
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    width: 100%;
+    height: 22.5%;
+}
+.titulopaquete2
+{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: xxx-large;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.incluyep2
+{
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+}
+.paquete2 ul
+{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+}
+.paquete3
+{
+    position: absolute;
+    top: 52%;
+    left: 0%;
+    width: 100%;
+    height: 22.5%;
+}
+.titulopaquete3
+{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: xxx-large;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.incluyep3
+{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+}
+.paquete3 ul
+{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+}
+.comprar
+{
+    position: absolute;
+    top: 300%;
+    left: 0%;
+}
+.botoncomprar
+{
+    color: white;
+    position: fixed;
+    top: 91%;
+    left: 87.5%;
+    width: 10%;
+    height: 8%;
+    font-size: xx-large;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.registrousuario
+{
+    position: absolute;
+    top: 80.5%;
+    left: 20%;
+    color: white;
+}
+.iniciosesion
+{
+    position: absolute;
+    top: 85.5%;
+    left: 60%;
+    color: white;
+}
