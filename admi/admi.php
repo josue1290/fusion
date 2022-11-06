@@ -7,12 +7,15 @@ include_once("../conexion/conexionBD.php");
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <table>
 	<img src="../img/iconosh2.png">
 		<div id="barrabuscar">
 		    <form method="POST">
-	            <!-- <a onclick="location.href='../login/log.php'">Logout</a> -->
+	            <a onclick="location.href='../login/log.php'">Logout</a>
+	            <a onclick="location.href='../admi/reporte_ventas.php'">Reporte</a>
+	            <a onclick="location.href='../admi/proyectos.php'">Proyectos</a>
                 <a onclick="location.href='../admi/lis_emp.php'">Empleados</a>
                 <a onclick="location.href='../admi/venta.php'">Ventas</a>
                 <a onclick="location.href='../admi/tic_admi.php'">Reportes</a>

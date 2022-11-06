@@ -20,7 +20,7 @@ $consulta="SELECT * FROM productos WHERE id_producto=$nd";
     echo $nombre3;
     echo $precio3;
 
-    mysqli_query($conexion, "INSERT INTO pre_venta (nd,nombre,precio,fecha) VALUES ('$nd3','$nombre3','$precio3', now())");
+    mysqli_query($conexion, "INSERT INTO pre_venta (nd,id_producto,nombre,precio,fecha) VALUES (null,$nd3,'$nombre3',$precio3, now())");
     
 
     // header("location:../vendedor/mesa1.php");

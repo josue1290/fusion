@@ -1,5 +1,10 @@
 <?php
 include_once("../conexion/conexionBD.php"); 
+
+
+$fecha1 = $_POST['fecha1']; 
+$fecha2	= $_POST['fecha2'];
+
 ?>
 <html>
 <head>    
@@ -19,7 +24,7 @@ include_once("../conexion/conexionBD.php");
 		</form>
 		</div>
 		
-		<tr><th colspan="7"><h1>VENTAS</h1><th colspan="2"><a style="font-weight: normal; font-size: 14px;" onclick="abrirform()">Filtrar</a></th></tr>
+		<tr><th colspan="7"><h1>VENTAS</h1><th colspan="2"><a style="font-weight: normal; font-size: 14px;" onclick="location.href='../admi/venta.php'">Regresar</a></th></tr>
 			<tr>
 			<th>Nro</th>
 			<th>Nd</th>
@@ -40,7 +45,7 @@ $queryusuarios = mysqli_query($conexion, "SELECT id_venta FROM ventas where id_v
 }
 else
 {
-$queryusuarios = mysqli_query($conexion, "SELECT * FROM ventas ORDER BY id_ventas asc");
+$queryusuarios = mysqli_query($conexion, "SELECT * from ventas where fecha between '$fecha1' and '$fecha2'");
 }
 		$numerofila = 0;
         while($mostrar = mysqli_fetch_array($queryusuarios)) 
@@ -61,40 +66,5 @@ $queryusuarios = mysqli_query($conexion, "SELECT * FROM ventas ORDER BY id_venta
         ?>
     </table>
 
-	<script>
-function abrirform() {
-  document.getElementById("formregistrar").style.display = "block";
-  
-}
-
-function cancelarform() {
-  document.getElementById("formregistrar").style.display = "none";
-}
-
-</script>
-<div class="caja_popup" id="formregistrar">
-  <form action="fil_venta.php" class="contenedor_popup" method="POST">
-        <table>
-		<tr><th colspan="2">Filtrar por fechas</th></tr>
-            <tr> 
-                <td>Fecha 1</td>
-                <td><input type="text" name="fecha1" required></td>
-            </tr>
-            <tr> 
-                <td>Fecha 2</td>
-                <td><input type="text" name="fecha2" required></td>
-            </tr>
-            <tr> 	
-               <td colspan="2">
-				   <button type="button" onclick="cancelarform()">Cancelar</button>
-				   <input type="submit" name="btnregistrar" value="Buscar" >
-			</td>
-            </tr>
-        </table>
-    </form>
-</div>
-
 </body>
 </html>
-
-<!-- onClick="javascript: return confirm('¿Deseas registrar este empleado?');" -->
