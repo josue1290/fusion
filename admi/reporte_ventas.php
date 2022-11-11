@@ -2,9 +2,6 @@
 include_once("../conexion/conexionBD.php"); 
 
 
-$fecha1 = $_POST['fecha1']; 
-$fecha2	= $_POST['fecha2'];
-
 ?>
 <html>
 <head>    
@@ -24,12 +21,13 @@ $fecha2	= $_POST['fecha2'];
 		</form>
 		</div>
 		
-		<tr><th colspan="4"><h1>REPORTE DE VENTAS</h1><th colspan="2"><a style="font-weight: normal; font-size: 14px;" onclick="location.href='../admi/venta.php'">Regresar</a></th></tr>
+		<tr><th colspan="5"><h1>REPORTE DE VENTAS</h1><th colspan="2"><a style="font-weight: normal; font-size: 14px;" onclick="abrirform()">Filtrar</a></th></tr>
 			<tr>
 			<th>Nro</th>
 			<th>No. Producto</th>
             <th>Nombre</th>
             <th>Descripcion</th>
+            <th>Fecha</th>
             <th>Total ventas</th>
 			</tr>
         <?php 
@@ -41,7 +39,7 @@ $queryusuarios = mysqli_query($conexion, "SELECT nombre FROM productos where id_
 }
 else
 {
-$queryusuarios = mysqli_query($conexion, "SELECT ventas.id_producto, nombre, descripcion, count(*) as total_ventas FROM  productos, ventas where productos.id_producto = ventas.id_producto group by id_producto");
+$queryusuarios = mysqli_query($conexion, "SELECT ventas.id_producto, nombre, descripcion, ventas.fecha, count(*) as total_ventas FROM  productos, ventas where productos.id_producto = ventas.id_producto group by id_producto");
 }
 		$numerofila = 0;
         while($mostrar = mysqli_fetch_array($queryusuarios)) 
@@ -51,12 +49,46 @@ $queryusuarios = mysqli_query($conexion, "SELECT ventas.id_producto, nombre, des
             echo "<td>".$mostrar['id_producto']."</td>";
             echo "<td>".$mostrar['nombre']."</td>";    
 			echo "<td>".$mostrar['descripcion']."</td>";  
+			echo "<td>".$mostrar['fecha']."</td>";  
 			echo "<td>".$mostrar['total_ventas']."</td>";  
 
 
 }
         ?>
     </table>
+
+	<script>
+function abrirform() {
+  document.getElementById("formregistrar").style.display = "block";
+  
+}
+
+function cancelarform() {
+  document.getElementById("formregistrar").style.display = "none";
+}
+
+</script>
+<div class="caja_popup" id="formregistrar">
+  <form action="kpi.php" class="contenedor_popup" method="POST">
+        <table>
+		<tr><th colspan="2">Filtrar por fechas</th></tr>
+            <tr> 
+                <td>Fecha 1</td>
+                <td><input type="text" name="fecha1" required></td>
+            </tr>
+            <tr> 
+                <td>Fecha 2</td>
+                <td><input type="text" name="fecha2" required></td>
+            </tr>
+            <tr> 	
+               <td colspan="2">
+				   <button type="button" onclick="cancelarform()">Cancelar</button>
+				   <input type="submit" name="btnregistrar" value="Buscar" >
+			</td>
+            </tr>
+        </table>
+    </form>
+</div>
 
 </body>
 </html>

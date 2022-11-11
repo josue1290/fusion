@@ -8,14 +8,61 @@ include_once("../conexion/conexionBD.php");
 		<link rel="stylesheet" href="../style.css">
 </head>
 
+<style>
+    
+    .bajo{
+        font-family: sans-serif;
+        font-size: 20px;
+        color:black;
+    }
+    .bajo div{
+        width: 30%;
+        height: 35%;
+        padding:0;
+        margin:0;
+        background-color:red;
+        border-radius:50%;
+	    text-decoration: none;
+    }
+    .medio{
+        font-family: sans-serif;
+        color:black;
+        font-size: 20px;
+    }
+    .medio div{
+        width: 30%;
+        height: 35%;
+        padding:0;
+        margin:0;
+        background-color:yellow;
+        border-radius:50%;
+	    text-decoration: none;
+    }
+    .alto{
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+    .alto div{
+        width: 30%;
+        height: 35%;
+        padding:0;
+        margin:0;
+        color:white;
+        background-color: green;
+        border-radius:50%;
+	    text-decoration: none;
+    }
+
+</style>
+
 <body>
     <table>
 	<img src="../img/iconosh2.png">
 		<div id="barrabuscar">
 		    <form method="POST">
-	            <a onclick="location.href='../login/log.php'">Logout</a>
+	            <!-- <a onclick="location.href='../login/log.php'">Logout</a> -->
 	            <a onclick="location.href='../admi/reporte_ventas.php'">Reporte</a>
-	            <a onclick="location.href='../admi/proyectos.php'">Proyectos</a>
+	            <!-- <a onclick="location.href='../admi/proyectos.php'">Proyectos</a> -->
                 <a onclick="location.href='../admi/lis_emp.php'">Empleados</a>
                 <a onclick="location.href='../admi/venta.php'">Ventas</a>
                 <a onclick="location.href='../admi/tic_admi.php'">Reportes</a>
@@ -54,7 +101,21 @@ $queryusuarios = mysqli_query($conexion, "SELECT * FROM productos where estatus=
             echo "<td>".$mostrar['marcha']."</td>";    
 			echo "<td>".$mostrar['descripcion']."</td>";  
 			echo "<td>".$mostrar['precio']."</td>";  
-			echo "<td>".$mostrar['inventario']."</td>";  
+            switch ($mostrar['inventario']) {
+                case ($mostrar['inventario']<=10):
+                    echo "<td class=bajo><div>".$mostrar['inventario']."</div></td>";
+                    break;
+                case  ($mostrar['inventario']<=20):
+                    echo "<td  class=medio><div>".$mostrar['inventario']."</div></td>";
+                    break;
+                case ($mostrar['inventario']>=21):
+                    echo "<td class=alto><div>".$mostrar['inventario']."</div></td>";
+                    break;
+            };
+            // else{
+            //     echo "<td>".$mostrar['inventario']."</td>";
+            // };   
+             
             echo "<td style='width:26%'><a href=\"eliminar.php?nd=$mostrar[id_producto]\" onClick=\"return confirm('¿Estás seguro de eliminar el producto $mostrar[nombre]?')\">Eliminar</a></td>";           
 }
         ?>

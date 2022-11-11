@@ -8,6 +8,8 @@ body
     width: 100%;
 	display: flex;
 	flex-direction: column;	
+
+
 }
 table
 {
@@ -17,7 +19,7 @@ table
     border: 1px solid black;
 	margin:50px auto;
     background: white;
-	/* position: absolute; */
+	position: absolute;
 	top: 10%;
 	left: 5%;
 }
