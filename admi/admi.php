@@ -72,11 +72,9 @@ include_once("../conexion/conexionBD.php");
 			<tr><th colspan="8"><h1>Productos</h1></tr>
 			<tr>
 		    <th>Nro</th>
-			<th>Nd</th>
+		    <th>Modelo</th>
             <th>Nombre</th>
             <th>Marca</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
             <th>Stock</th>
             <th>Acción</th>
 			</tr>
@@ -96,11 +94,9 @@ $queryusuarios = mysqli_query($conexion, "SELECT * FROM productos where estatus=
 		{    $numerofila++;    
             echo "<tr>";
 			echo "<td>".$numerofila."</td>";
-            echo "<td>".$mostrar['id_producto']."</td>";
+			echo "<td>".$mostrar['id_producto']."</td>";
             echo "<td>".$mostrar['nombre']."</td>";
-            echo "<td>".$mostrar['marcha']."</td>";    
-			echo "<td>".$mostrar['descripcion']."</td>";  
-			echo "<td>".$mostrar['precio']."</td>";  
+            echo "<td>".$mostrar['marcha']."</td>";     
             switch ($mostrar['inventario']) {
                 case ($mostrar['inventario']<=10):
                     echo "<td class=bajo><div>".$mostrar['inventario']."</div></td>";
@@ -116,7 +112,7 @@ $queryusuarios = mysqli_query($conexion, "SELECT * FROM productos where estatus=
             //     echo "<td>".$mostrar['inventario']."</td>";
             // };   
              
-            echo "<td style='width:26%'><a href=\"eliminar.php?nd=$mostrar[id_producto]\" onClick=\"return confirm('¿Estás seguro de eliminar el producto $mostrar[nombre]?')\">Eliminar</a></td>";           
+            echo "<td style='width:26%'> <a href=\"../admi/detalles_prod.php?nd=$mostrar[id_producto]\">Detalles</a> | <a href=\"eliminar.php?nd=$mostrar[id_producto]\" onClick=\"return confirm('¿Estás seguro de eliminar el producto $mostrar[nombre]?')\">Eliminar</a>  </td>";           
 }
         ?>
     </table>
@@ -133,33 +129,36 @@ function cancelarform() {
 
 </script>
 <div class="caja_popup" id="formregistrar">
-  <form action="agregar.php" class="contenedor_popup" method="POST">
+  <form action="" class="contenedor_popup" method="POST">
         <table>
 		<tr><th colspan="2">Nuevo Producto</th></tr>
             <tr> 
+                <td>No. Producto</td>
+                <td><input type="text" name="nombre" required value="<?php echo $id;?>"></td>
+            </tr>
+            <tr> 
                 <td>Nombre</td>
-                <td><input type="text" name="nombre" required></td>
+                <td><input type="text" name="nombre" required value="<?php echo $nombre;?>"></td>
             </tr>
             <tr> 
                 <td>Marca</td>
-                <td><input type="email" name="marca" required></td>
+                <td><input type="email" name="marca" required value="<?php echo $marcha;?>"></td>
             </tr>
             <tr> 
                 <td>Descripcion</td>
-                <td><input type="text" name="descripcion" required></td>
+                <td><input type="text" name="descripcion" required value="<?php echo $descripcion;?>"></td>
             </tr> 
             <tr> 
                 <td>Precio</td>
-                <td><input type="text" name="precio" required></td>
+                <td><input type="text" name="precio" required value="<?php echo $precio;?>"></td>
             </tr> 
             <tr> 
                 <td>Stock</td>
-                <td><input type="text" name="inventario" required></td>
+                <td><input type="text" name="inventario" required value="<?php echo $inventario;?>"></td>
             </tr>
             <tr> 	
                <td colspan="2">
 				   <button type="button" onclick="cancelarform()">Cancelar</button>
-				   <input type="submit" name="btnregistrar" value="Registrar" onClick="javascript: return confirm('¿Desea registrar este producto?');">
 			</td>
             </tr>
         </table>
